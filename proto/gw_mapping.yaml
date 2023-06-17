@@ -1,0 +1,24 @@
+type: google.api.Service
+config_version: 3
+
+# Please refer google.api.Http in https://github.com/googleapis/googleapis/blob/master/google/api/http.proto file for details.
+http:
+  rules:
+    - selector: crypay.v1.FundsService.GetFunds
+      get: /api/v1/funds/{login}
+      
+    - selector: crypay.v1.FundsService.DecrementFunds
+      patch: /api/v1/funds/{login}/decrement
+
+    - selector: crypay.v1.FundsService.DecrementFundsByCode
+      patch: /api/v1/funds/{login}/decrement/{code}
+
+#
+
+    - selector: crypay.v1.FundsService.CreateAccount
+      post: /api/v1/funds/{login}
+
+#
+    - selector: crypay.v1.OrdersService.CreateOrder
+      post: /api/v1/orders/new
+

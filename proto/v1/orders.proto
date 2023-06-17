@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+import "v1/empty.proto";
+
+package crypay.v1;
+option go_package = "crypay/v1";
+
+
+service OrdersService {
+  rpc CreateOrder(CreateOrderReq) returns (CreateOrderResp) {}
+  rpc CheckOrder(CheckOrderReq) returns (CheckOrderResp) {}
+}
+
+message CreateOrderReq {
+  string login = 1;
+  string net = 2;
+  int32 desiredAmount = 3;
+  string meta = 4;
+  bool autoCreateAccount = 5;
+}
+
+message CreateOrderResp {
+	string id = 1;
+  string addr = 2;
+  int32 expectedAmount = 3;
+}
+
+message CheckOrderReq {
+	string id = 1;
+}
+
+message CheckOrderResp {
+	string status = 1;
+}

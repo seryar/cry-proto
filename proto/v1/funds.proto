@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+import "v1/empty.proto";
+
+package crypay.v1;
+option go_package = "crypay/v1";
+
+
+service FundsService {
+  rpc CreateAccount(CreateAccountReq) returns (CreateAccountResp) {}
+
+  rpc GetFunds(GetFundsReq) returns (GetFundsResp) {}
+  rpc DecrementFunds(DecrementFundsReq) returns (DecrementFundsResp) {}
+  rpc DecrementFundsByCode(DecrementFundsByCodeReq) returns (DecrementFundsByCodeResp) {}
+
+}
+
+message CreateAccountReq {
+  string login = 1;
+}
+
+message CreateAccountResp {
+	string id =1;
+}
+
+message GetFundsReq {
+  string login = 1;
+}
+
+message GetFundsResp {
+	int32 fundsLeft = 1;
+  bool isFound = 2;
+}
+
+message DecrementFundsReq {
+  string reqId = 1;
+  string login = 2;
+  int32 funds = 3;
+}
+
+message DecrementFundsResp {
+	int32 fundsLeft = 1;
+}
+
+message DecrementFundsByCodeReq {
+  string reqId = 1;
+  string login = 2;
+  string code = 3;
+}
+
+message DecrementFundsByCodeResp {
+	int32 fundsLeft = 1;
+}
