@@ -202,6 +202,12 @@
         "fundsLeft": {
           "type": "integer",
           "format": "int32"
+        },
+        "isFound": {
+          "type": "boolean"
+        },
+        "isOk": {
+          "type": "boolean"
         }
       }
     },
@@ -211,6 +217,12 @@
         "fundsLeft": {
           "type": "integer",
           "format": "int32"
+        },
+        "isFound": {
+          "type": "boolean"
+        },
+        "isOk": {
+          "type": "boolean"
         }
       }
     },

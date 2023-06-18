@@ -40,6 +40,8 @@ message DecrementFundsReq {
 
 message DecrementFundsResp {
 	int32 fundsLeft = 1;
+	bool isFound = 2;
+  bool isOk = 3;
 }
 
 message DecrementFundsByCodeReq {
@@ -50,4 +52,6 @@ message DecrementFundsByCodeReq {
 
 message DecrementFundsByCodeResp {
 	int32 fundsLeft = 1;
+	bool isFound = 2;
+  bool isOk = 3;
 }
